@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= foundProduct.name %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <h1>
+        <%= foundProduct.name %>
+    </h1>
+    <ul>
+        <li>
+            €<%= foundProduct.price %>
+        </li>
+        <li>
+            <a href="/products?category=<%=foundProduct.category%>">
+                <%= foundProduct.category %>
+            </a>
+
+        </li>
+    </ul>
+    <a href="/products/<%=foundProduct._id%>/edit">Edit Product</a>
+    <br>
+    <a href="/products">All Products</a>
+    <br>
+    <form action="/products/<%=foundProduct._id%>?_method=DELETE" method="POST">
+        <button type="submit">Delete</button>
+    </form>
+
+</body>
+
+</html>

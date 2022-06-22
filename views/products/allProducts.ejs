@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <h1>
+        <%= title %>
+    </h1>
+    <p>Welcome to <%= title %>
+    </p>
+    <% if (title !="All Products" ) {%>
+        <a href="products/">All Products</a>
+        <% } %>
+            <a href="products/new">Post New Product</a>
+            <ul>
+                <% for (let product of products) { %>
+                    <li>
+                        <a href="/products/<%=product._id%>">
+                            <%= product.name %>
+                        </a>
+
+                    </li>
+                    <% } %>
+            </ul>
+</body>
+
+</html>
